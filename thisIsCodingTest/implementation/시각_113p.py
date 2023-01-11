@@ -8,10 +8,10 @@ def include3(num):
     else:
         return False
 
-for time in range(n + 1):
+for hour in range(n + 1):
     for min in range(60):
         for sec in range(60):
-            if include3(time) or include3(min) or include3(sec):
+            if include3(hour) or include3(min) or include3(sec):
                 result += 1
 
 print(result)
