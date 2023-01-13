@@ -1,2 +1,12 @@
-visited = [[0 for i in range(4)] for j in range (5)]
-print(visited)
+a = 1
+
+def globA():
+    global a
+    a = 3
+
+def noglob(a):
+    print("noglob", a)
+
+globA()
+noglob(6)
+print(a)
