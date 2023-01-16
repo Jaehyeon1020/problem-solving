@@ -22,7 +22,6 @@ def dfs(x, y, visited, ice):
     dfs(x + 1, y, visited, ice) # 하
     dfs(x, y - 1, visited, ice) # 좌
     dfs(x, y + 1, visited, ice) # 우
-
     return True
 
 for i in range(n):
