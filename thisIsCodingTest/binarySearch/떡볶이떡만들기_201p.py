@@ -49,18 +49,16 @@ def find():
 if find() == True:
     print(cutter)
 else:
-    if get_customer_cake(cakes, cutter) > m:
-        while get_customer_cake(cakes, cutter) > m:
-            cutter -= 1
+    while get_customer_cake(cakes, cutter) > m:
+        cutter -= 1
         
-        print(cutter + 1)
-    else:
-        while get_customer_cake(cakes, cutter) < m:
-            cutter += 1
+    print(cutter + 1)
 
-        print(cutter)
+    while get_customer_cake(cakes, cutter) < m:
+        cutter += 1
+
+    print(cutter)
 #################
 
 end_time = time.time() # 실행시간측정
-
-print("실행시간:", end_time - start_time, "초")
+print("실행시간:", end_time - start_time, "초") # 실행시간측정
