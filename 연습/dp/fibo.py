@@ -16,5 +16,17 @@ def fibo(x):
     else:
         d[x] = fibo(x - 1) + fibo(x - 2)
         return d[x]
+
+def fibo_bottomUp(x):
+    global d
+
+    d[1] = 1
+    d[2] = 1
+
+    for i in range(3, x + 1):
+        d[i] = d[i - 1] + d[i - 2]
+
+    return d[x]
+
+print(fibo_bottomUp(5))
     
-print(fibo(5))
