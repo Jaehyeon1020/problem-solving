@@ -1,4 +1,12 @@
-s = list(map(int, "123456"))
+arr = [1, 2, 3, 4, 5]
 
-for i in range(10, 0, -1):
-    print(i)
+count = 0
+newArr = []
+for item in arr[::-1]:
+    if count == 7:
+        break
+
+    newArr.append(item)
+    count += 1
+
+print(newArr)
