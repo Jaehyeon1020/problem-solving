@@ -1,12 +1,13 @@
 n, m = map(int, input().split())
 col, row, direction = map(int, input().split())
-location = [col, row] # 행 열로 입력 받음
+location = [col, row]  # 행 열로 입력 받음
 
 game_map = []
-visited = [[False for i in range(m)] for j in range (n)]
+visited = [[False for i in range(m)] for j in range(n)]
 
 for _ in range(n):
     game_map.append(list(map(int, input().split())))
+
 
 def can_go_left():
     global location
@@ -33,6 +34,7 @@ def can_go_left():
         location[1] = row_copy
         return True
 
+
 def can_go_back():
     global location
     global direction
@@ -56,57 +58,62 @@ def can_go_back():
         location[1] = row_copy
         return True
 
+
 def set_visited():
     global location
     global visited
 
     visited[location[0]][location[1]] = True
 
+
 def move_forward():
     global location
     global direction
-    
+
     # 북쪽을 보고있을 때
     if direction == 0:
-        location[0] += -1 # 위 행으로 이동
+        location[0] += -1  # 위 행으로 이동
 
     # 동쪽을 보고있을 때
     elif direction == 1:
-        location[1] += 1 # 오른쪽 열로 이동
+        location[1] += 1  # 오른쪽 열로 이동
 
     # 남쪽을 보고있을 때
     elif direction == 2:
-        location[0] += 1 # 아래 행으로 이동
+        location[0] += 1  # 아래 행으로 이동
 
     # 서쪽을 보고있을 때
     elif direction == 3:
-        location[1] += -1 # 왼쪽 열로 이동
+        location[1] += -1  # 왼쪽 열로 이동
+
 
 def move_backward():
     global location
     global visited
     global direction
-    
+
     # 북쪽을 보고있을 때 => 남쪽으로 이동해야됨
     if direction == 0:
-        location[0] += 1 # 아래 행으로 이동
+        location[0] += 1  # 아래 행으로 이동
 
     # 동쪽을 보고있을 때
     elif direction == 1:
-        location[1] += -1 # 왼쪽 열로 이동
+        location[1] += -1  # 왼쪽 열로 이동
 
     # 남쪽을 보고있을 때
     elif direction == 2:
-        location[0] += -1 # 위 행으로 이동
+        location[0] += -1  # 위 행으로 이동
 
     # 서쪽을 보고있을 때
     elif direction == 3:
-        location[1] += 1 # 오른쪽 열로 이동
+        location[1] += 1  # 오른쪽 열로 이동
+
 
 def turn_left():
     global direction
 
     direction = (direction + 3) % 4
+
 
 set_visited()
 dir_change = 0
