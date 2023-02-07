@@ -15,9 +15,8 @@ for _ in range(e):
   graph[a].append(b)  # 정점 A -> B 연결
   indegree[b] += 1  # b의 진입차수 1 증가
 
+
 # 위상정렬
-
-
 def topology_sort():
   result = []  # 수행 결과 리스트
   q = deque()
