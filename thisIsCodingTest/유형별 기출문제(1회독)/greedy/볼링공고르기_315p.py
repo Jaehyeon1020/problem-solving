@@ -1,23 +1,21 @@
 import time as _time
 
 ###### 입력 ######
-n = int(input())
-moneys = list(map(int, input().split()))
+n, m = map(int, input().split())
+data = list(map(int, input().split()))
 #################
 
 _start_time = _time.time()  # 실행시간측정
 
 ###### 실행 ######
-moneys.sort()
+result = 0
 
-target = 1
-for m in moneys:
-  if target < m:
-    break
+for i in range(len(data) - 1):
+  for j in range(i + 1, len(data)):
+    if data[i] != data[j]:
+      result += 1
 
-  target += m
-
-print(target)
+print(result)
 #################
 
 _end_time = _time.time()  # 실행시간측정
