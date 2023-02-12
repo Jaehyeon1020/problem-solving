@@ -1,3 +1,5 @@
-l = ["abc", "def", "jjjj"]
+from heapq import heappop as hpop
+from heapq import heappush as hpush
 
-print(l.index("a"))
+q = []
+hpush(q, 1)
