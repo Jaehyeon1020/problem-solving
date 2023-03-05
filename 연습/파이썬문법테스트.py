@@ -1,5 +1,4 @@
-from heapq import heappop as hpop
-from heapq import heappush as hpush
+l = [3, 1, 2, 5, 4]
+l.sort()
 
-q = []
-hpush(q, 1)
+print(l)
